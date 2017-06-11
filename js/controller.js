@@ -41,7 +41,7 @@
 
           });
            $http({
-               url:'php/article.php'
+               url:'../php/article.php'
       }).success(function (info) {
         // 请求回的数据放到模型上
        
@@ -80,7 +80,7 @@
      app.controller('beautyctrl',['$scope','$http',function($scope,$http){
 
            $http({
-            url:'php/beauty.php',//去后台获取相关数据
+            url:'../php/beauty.php',//去后台获取相关数据
            }).success(function(info){
              $scope.allData = info.data;
              console.log($scope.allData.length);
@@ -104,8 +104,6 @@
 
 
        }]);
-     //
-    
       app.controller('orangectrl',['$scope','$http',function($scope,$http){
            
        }]);
