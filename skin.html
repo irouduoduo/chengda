@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>grow</title>
+	<style type="text/css">
+       body,ul,li {
+       	margin: 0;
+       	padding: 0;
+       	list-style: none;
+       }
+       body {
+       	/*background-color: rgba(255,0,0,0.2);*/
+       	text-align: center;
+       }
+       .clearfix:after {
+        content:'';
+        height: 0;
+        display: block;
+        visibility: hidden;
+        overflow: hidden;
+        clear:both;
+      }
+      .clearfix {
+        zoom:1;
+      }
+       .box {
+       	width: 1260px;
+        margin: 0 auto;
+        margin-top: 30px;
+        margin-left: 15px;
+       }
+       .container {
+        width: 20000px;
+         /*height: 600px;*/
+       	/*width: 400px;*/
+       	/*height: 420px;*/
+        /*margin: 0 auto;*/
+       	/*background-color: red;*/
+        overflow: scroll;
+       	border: 2px solid #ccc;
+        box-shadow: 2px 10px 30px #000000;
+       }
+
+       .container h1 {
+       	margin-top: 10px;
+       }
+       .container img,.container span {
+       	display: block;
+       	width: 350px;
+       	margin: 0 auto;
+       	margin-bottom: 3px;
+        margin-top: 8px;
+        transition: all 0.2s ease-out;
+       }
+      .container img:hover {
+        transform:translate(0,6px);
+      }
+       .getMore {
+          background-color: #ccc;
+          width: 30px;
+          height: 20px;
+          text-decoration: none;
+          padding: 5px;
+           box-shadow: 3px 5px 20px #000000;
+       }
+       .clickme {
+       /* margin-top: 10px;
+        margin-bottom: 50px;*/
+        float: left;
+       }
+       .item {
+        margin-right: 30px;
+        float: left;
+        margin-top: 20px;
+       }
+       .item:nth-child(1) {
+        margin-top: 0;
+       }
+       .getMore {
+         display: inline-block;
+         width: 100px;
+          position: fixed;
+       }
+       /*自适应*/
+        @media only screen and (max-width: 1000px) {
+        .box {
+          width: 1000px;
+        }
+       }
+        @media only screen and (max-width: 800px) {
+        .box {
+          width: 800px;
+        }
+       }
+       @media only screen and (max-width: 600px) {
+        .box {
+          width: 500px;
+        }
+       }
+        @media only screen and (max-width: 400px) {
+        .box {
+          width: 400px;
+        }
+       }
+	</style>
+</head>
+<body>
+
+   
+    <div class="box">
+       <div class="container clearfix">
+          <div class="item">
+          	 <div class="title">爱搭细节展示</div>
+    	    <div class="top">
+    	     	<img src="images/beauty_1.jpg">
+    	    </div>
+    	   <div class="bottom">
+    		   <span class="name">韩版百搭字母印花上衣短袖宽松纯棉T恤高腰热裤毛边黑色破洞牛仔短裤</span>
+    		   <span class="liked">520</span>
+            </div>
+          </div>
+       </div>
+    <!-- <div class="clickme"> -->
+			<a href="#current" class="getMore">加载更多</a>
+		<!-- </div> -->
+    </div>
+   
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src='js/template-native.js'>
+	</script>
+    <script type="text/template" id="template">
+       <% <div class="item">
+          	
+    	    <div class="top">
+    	     	<img src="<%=image%>">
+    	    </div>
+    	   <div class="bottom">
+    		   <span class="name"><%=name%></span>
+    		   <span class="liked"><%=like_count%></span>
+            </div>
+          </div>
+        %>
+    </script>
+	<script type="text/javascript">
+         $(function(){
+         	// console.log($(document.body).height());
+             $('.getMore').click(function(){
+                   $.ajax({
+                   	  url:'php/skin.php',
+                   	  type:'get',
+                      success:function(data){
+                      	var obj = JSON.parse(data);
+                        // 调用模板
+                        var result = template('template',obj);
+                          $('.container').append(result); 
+                       
+              
+
+                      }
+
+                   });
+                 
+             });
+
+         });
+	</script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!-- 初次显示视图 -->
+      <div class="ww clearfix showbox " >
+          <div class="show clearfix ">
+             <div class="article clearfix" ng-repeat="x in selList">
+                 <ul >
+                   <li class="item" >
+                     <div class="left">
+                       <img ng-src="{{x.thumb}}" alt="">
+                     </div>
+                     <div class="right ">
+                       <a href="{{x.detail_link}}">{{x.topic}}</a>
+                       <p class="description">{{x.name}}</p>
+
+                     </div>
+             
+                   </li>
+                 </ul>
+                  <span class="heart"><i class="fa fa-heart">{{x.like_count}}</i></span>
+                 </div>
+                
+          </div>
+           <div class="sidebar-container clearfix">
+                  <div class="card-me">
+                     <img src="images/me.jpg">
+                     <p class="user">irouduoduo</p>
+                     <p class="findme">
+                        <a href="http://blog.csdn.net/irouduoduo" class="fa">+关注</a>
+                        <a href="http://blog.csdn.net/irouduoduo" class="fa fa-envelope-o">发私信</a>
+                      </p>
+                      <p class="sign fa fa-at">生活应努力使之美好</p>
+                  </div>
+                 <div class="comment">
+                   <div class="title">
+                     <i class="fa fa-flag"></i>
+                     <span>最新评论</span>
+                   </div>
+                   <ul >
+                     <li class="clearfix">
+                       <div class="left">
+                          <img src="images/head_1.jpg">
+                       </div>
+                      
+                       <div class="right">
+                          <p>孤独求败</p>
+                          <p>腿胖，无药可救啊</p>
+                       </div>
+                     </li>
+                     <li class="clearfix">
+                      <div class="left">
+                          <img src="images/head_2.jpg">
+                       </div>
+                       <div class="right">
+                          <p>嘟嗒嘟嗒</p>
+                          <p>买家秀是卖家秀美好的想像。</p>
+                       </div>
+                     </li>
+                     <li class="clearfix">
+                      <div class="left">
+                          <img src="images/head_3.jpg">
+                       </div>
+                       <div class="right">
+                          <p>lookme</p>
+                          <p>如果是白色皮肤，基本什么颜色都可以驾驭。不过还是有禁忌色的</p>
+                       </div>
+                     </li>
+                     <li class="clearfix">
+                       <div class="left">
+                          <img src="images/head_4.jpg">
+                       </div>
+                       <div class="right">
+                          <p>齐齐哈尔</p>
+                          <p>夏天好热，有没有推荐的雪纺裙?</p>
+                       </div>
+                     </li>
+                     <li class="clearfix">
+                       <div class="left">
+                          <img src="images/head_5.jpg">
+                       </div>
+                       <div class="right">
+                          <p>直冲云霄</p>
+                          <p>快来发表评论吧</p>
+                       </div>
+                     </li>
+                   </ul>
+                 </div>
+                 <div class="message">
+                   <p>发表评论</p>
+                   <textarea ng-model="comment"></textarea>
+                   <input type="submit" value="确定" ng-click="submit()">
+                 </div>
+           </div>
+      </div>
+     <div class="pageBtn">
+         <my-pagination page-option="option"></my-pagination>
+     </div>

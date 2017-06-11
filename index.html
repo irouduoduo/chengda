@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+  <link href="css/index.css" rel="stylesheet">
+  <link href="fontawesome/css/font-awesome.min.css" rel="stylesheet" />
+  <!--[if IE]>
+  <link href="fontawesome/css/font-awesome-ie7.min.css" rel="stylesheet" />
+  <![endif]-->
+</head>
+<body ng-app="app">
+     <!-- 头部 -->
+     <header id="header" ng-controller="new" >
+      <div class="header-content clearfix">  
+      <div class="logo clearfix">
+        	<img src="images/logo.png">
+        	<span>橙子爱搭</span>
+      </div>
+     	<nav >
+     		<ul class="clearfix">
+               <li ><a href="#/" class="focus">主页</a></li>
+               <li ><a href="#/index" >精选</a></li>
+               <li><a href="#/beauty">美搭</a></li>
+               <li><a href="skin.html" target="_blank">细节</a></li>
+               <!-- <li><a href="#/orange">橙子</a></li> -->
+     		</ul>
+     	</nav>
+          <div class="loginer clearfix" >
+        <div class="login"><a href="javascript:;" ng-click="login()">登录</a>             
+        </div>
+        <div class="register"><a href="javascript:;" ng-click="register()">注册</a></div>
+         
+     </div>
+     </div>
+       <div class="a">
+       <div class="container">
+          <input type="button" class="cancle" ng-click="cancle()" value="❎">
+           <div class="reg">
+           
+            <p>
+                <label for="username" class="e">用户名</label>
+                <input type="text" name="username" id="username">
+             </p>
+            <p>
+                  <label for="password" class="e">请设置密码</label>
+                  <input type="password" name="password" id="password">
+            </p>
+           <p>
+               <label for="qr" class="e">请确认密码</label>
+             <input type="password" name="qr" id="qr">
+           </p>
+           <p>
+               <label for="number" class="e">验证手机</label>
+             <input type="text" name="number" id="number">
+           </p>
+           <p>
+             <label for="yz" class="e">短信验证码</label>
+             <input type="text" name="yz" id="yz">
+             <button id="hq">获取短信验证码</button>
+           </p>
+           <button id="regester">立即注册</button>
+       </div>
+       </div>
+     </div>
+     </header>
+     
+     <!-- 橘子跳动动画 -->
+   
+     <!-- 控制器视图 -->
+     <div class="view-c clearfix">
+     	   <div ng-view="">
+         </div>
+     </div>
+     <!-- 尾部 -->
+     <footer id="footer">
+         <div class="return">
+           <a href="javascript:;">
+              <img src="images/up.png">
+           </a>  
+         </div>
+         <div class="top">
+         <p class="contacts">
+          <a href="http://weibo.com/5573124074/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" target="_blank"><i class="fa fa-weibo"></i></a>
+          <a href="https://github.com/irouduoduo" target="_blank"><i class="fa fa-github"></i></a>
+          <a href="weixin.html" target="_blank"><i class="fa fa-weixin"></i></a>
+          <a href="qq.html" target="_blank"><i class="fa fa-qq"></i></a>
+         </p>
+         <p class="topic">one heart want to be better</p>
+         <p class="links">
+            <span>关于我们</span>
+            <span>友情链接</span>
+            <span>四季理论</span>
+            <span>官方论坛</span>
+         </p>
+         </div>
+         <div class="bottom">
+           <p>生活应努力使之美好。生活不止当下，跋山涉险，还有诗和远方。</p>
+           <span>Copyright © 2017.6.1 橙子爱搭 Theme by yali Gao All All Rights Reserved.</span>
+         </div>
+     </footer>
+  <script src=js/jquery.min.js></script>
+  <script src=js/angular.js></script>
+	
+  <script src=js/angular-route.min.js></script>
+  <script src=js/angular-pagination.js></script>
+	<script src=js/controller.js></script>
+	
+</body>
+</html>

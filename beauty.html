@@ -1,0 +1,28 @@
+<div class="beautybox clearfix ww">
+	<ul>
+
+		<li ng-repeat="x in data" >
+			<div class="item">
+				<div class="top">
+					<a href="javascript:;">
+						<img src="{{x.image}}">
+						
+					</a>
+                   <div class="cover"></div>
+				<a href="https://shop126831972.taobao.com/" target="_blank"><span class="link"><i class="fa fa-chain"></i></span></a>
+				<span class="likeNum"><i class="fa fa-heart"></i>{{x.like_count}}</span>
+			</div>
+				</div>
+				<div class="bottom">
+					<p class="subname">{{x.subnames[0]}}.{{x.subnames[1]}}</p>
+					<!-- <p class="tags"></p> -->
+				</div>
+				
+		</li>
+	</ul>
+</div>
+<div class="pageBtn2">
+	 
+         <my-pagination page-option="option"></my-pagination>
+    
+</div>
