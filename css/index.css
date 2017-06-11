@@ -132,6 +132,9 @@ body,ul,li {
         /*border: 1px solid #000000;*/
         /*background-color: red;*/
       }
+      .show {
+        float: left;
+      }
       .show .article {
 	     width: 900px;
 	     margin-right:360px;
